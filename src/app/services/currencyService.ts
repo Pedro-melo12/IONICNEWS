@@ -21,21 +21,25 @@ export class CurrencyService {
   
   getExchangeRates(baseCurrency: string): Observable<any> {
     return this.http.get(`${this.apiUrl}${baseCurrency}`).pipe(
-    
       tap(async (data: any) => {
+        
         await this.storage.set('rates', {
           date: new Date().toISOString(),
           rates: data,
         });
       }),
-      
-      catchError(async () => {
-        const savedRates = await this.storage.get('rates');
-        if (savedRates) {
-          return of(savedRates.rates); 
-        } else {
-          throw new Error('Sem conexão e sem dados armazenados.');
-        }
+      catchError(() => {
+        
+        return new Observable((observer) => {
+          this.storage.get('rates').then((savedRates) => {
+            if (savedRates) {
+              observer.next(savedRates.rates);
+            } else {
+              observer.error('Sem conexão e sem dados armazenados.');
+            }
+            observer.complete();
+          });
+        });
       })
     );
   }
