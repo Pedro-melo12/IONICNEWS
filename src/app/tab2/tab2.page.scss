@@ -1,0 +1,45 @@
+
+  
+
+
+  ion-content {
+    --background: #f4f4f4; /* Fundo claro */
+    padding: 16px;
+  }
+  
+  ion-card {
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  ion-item {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --background: #ffffff;
+    --border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 12px; /* Espaço entre os itens */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* Sombra leve */
+  }
+  
+  ion-input,
+  ion-select {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --border-radius: 8px; /* Bordas arredondadas */
+    --background: #f9f9f9; /* Fundo sutil */
+  }
+  
+  ion-label {
+    font-size: 0.9em; /* Tamanho da fonte reduzido */
+    color: #666; /* Cor neutra */
+  }
+  
+  ion-button {
+    --background: #007bff; /* Azul mais forte */
+    --border-radius: 8px; /* Bordas arredondadas */
+    width: 100%; /* Botão ocupa toda a largura */
+    font-weight: bold; /* Destacar texto */
+    margin-top: 16px; /* Espaço acima do botão */
+  }
+  

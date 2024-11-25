@@ -1,2 +1,31 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+// Cores principais do aplicativo
+:root {
+    --ion-color-primary: #4caf50; /* Verde para o tema principal */
+    --ion-color-primary-rgb: 76, 175, 80;
+    --ion-color-secondary: #2196f3; /* Azul para destaque */
+    --ion-color-secondary-rgb: 33, 150, 243;
+    --ion-color-tertiary: #ff9800; /* Laranja para botões especiais */
+    --ion-color-tertiary-rgb: 255, 152, 0;
+  
+    --ion-color-light: #f4f4f4; /* Fundo leve */
+    --ion-color-light-rgb: 244, 244, 244;
+    --ion-color-dark: #222428; /* Texto escuro */
+    --ion-color-dark-rgb: 34, 36, 40;
+  }
+  
+  // Fontes e tamanhos
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  ion-header {
+    background-color: var(--ion-color-primary);
+    color: white;
+  }
+  
+  ion-content {
+    --background: var(--ion-color-light);
+  }
+  

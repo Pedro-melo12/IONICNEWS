@@ -1,17 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="login-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="text-center">Bem-vindo</ion-card-title>
+        <ion-card-subtitle class="text-center">
+          Faça login para continuar
+        </ion-card-subtitle>
+      </ion-card-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-card-content>
+        <form (submit)="login()">
+          <!-- Campo de E-mail -->
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              required
+              name="email"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Campo de Senha -->
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input
+              type="password"
+              [(ngModel)]="password"
+              required
+              name="password"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Botão de Login -->
+          <ion-button expand="block" type="submit">Entrar</ion-button>
+        </form>
+
+        <!-- Link para criar conta -->
+        <div class="create-account">
+          <p>
+            Não tem uma conta?
+            <a href="#" (click)="register()">Cadastre-se</a>
+
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
