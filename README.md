@@ -1,6 +1,6 @@
 # Conversor de Moedas - Ionic
 
-![Logo](https://via.placeholder.com/800x400.png?text=Conversor+de+Moedas)
+
 
 Este é um aplicativo de conversão de moedas desenvolvido com **Ionic Framework** e **Angular**. Ele permite realizar conversões entre diferentes moedas usando taxas de câmbio atualizadas em tempo real.
 
