@@ -45,7 +45,25 @@
             <ion-card-title>Resultado</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ amount }} {{ baseCurrency }} = {{ conversionResult }} {{ targetCurrency }}
+            {{ amount }} {{ baseCurrency }} = {{ conversionResult | number: '1.2-2' }} {{ targetCurrency }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row>
+      <ion-col>
+        <ion-card *ngIf="history.length > 0">
+          <ion-card-header>
+            <ion-card-title>Histórico de Conversões</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let record of history">
+                {{ record.amount }} {{ record.base }} → {{ record.result | number: '1.2-2' }} {{ record.target }}
+              </ion-item>
+            </ion-list>
           </ion-card-content>
         </ion-card>
       </ion-col>

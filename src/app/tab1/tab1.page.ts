@@ -23,7 +23,6 @@ export class Tab1Page {
       return;
     }
 
-    // Lógica de autenticação (a ser conectada com seu backend ou Firebase)
     if (this.email === 'teste@teste.com' && this.password === '123456') {
       const alert = await this.alertController.create({
         header: 'Sucesso',
@@ -43,6 +42,6 @@ export class Tab1Page {
 
   register() {
     console.log('Redirecionar para tela de registro');
-    // Redirecione para a tela de registro
+
   }
 }

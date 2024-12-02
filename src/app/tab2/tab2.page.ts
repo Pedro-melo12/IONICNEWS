@@ -12,6 +12,7 @@ export class Tab2Page implements OnInit {
   targetCurrency = 'EUR';
   amount = 1;
   conversionResult: number | null = null;
+  history: { base: string; target: string; amount: number; result: number }[] = [];
 
   constructor(private currencyService: CurrencyService) {}
 
@@ -29,6 +30,19 @@ export class Tab2Page implements OnInit {
     this.currencyService.getExchangeRates(this.baseCurrency).subscribe((data: any) => {
       const rate = data.rates[this.targetCurrency];
       this.conversionResult = this.amount * rate;
+
+    
+      this.history.unshift({
+        base: this.baseCurrency,
+        target: this.targetCurrency,
+        amount: this.amount,
+        result: this.conversionResult,
+      });
+
+
+      if (this.history.length > 10) {
+        this.history.pop();
+      }
     });
   }
 }
