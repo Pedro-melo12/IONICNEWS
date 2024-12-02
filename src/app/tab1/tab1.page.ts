@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +11,10 @@ export class Tab1Page {
   email: string = '';
   password: string = '';
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    private alertController: AlertController,
+    private navController: NavController 
+  ) {}
 
   async login() {
     if (this.email === '' || this.password === '') {
@@ -30,6 +34,9 @@ export class Tab1Page {
         buttons: ['OK'],
       });
       await alert.present();
+
+     
+      this.navController.navigateRoot('/tabs/tab2');
     } else {
       const alert = await this.alertController.create({
         header: 'Erro',
@@ -42,6 +49,5 @@ export class Tab1Page {
 
   register() {
     console.log('Redirecionar para tela de registro');
-
   }
 }
